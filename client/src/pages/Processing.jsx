@@ -26,7 +26,7 @@ function Processing() {
 
     const pollInterval = setInterval(async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/api/status/${submissionId}`)
+        const res = await axios.get(`sprezox-production.up.railway.app/api/status/${submissionId}`)
         if (res.data.status === 'done') {
           clearInterval(pollInterval)
           clearInterval(stepInterval)

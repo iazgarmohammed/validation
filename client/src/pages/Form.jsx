@@ -285,7 +285,7 @@ function Form() {
       if (pitchDeck) {
         formDataToSend.append('pitchDeck', pitchDeck)
       }
-      const res = await axios.post('http://localhost:5000/api/submit', formDataToSend, {
+      const res = await axios.post('sprezox-production.up.railway.app/api/submit', formDataToSend, {
         headers: { 'Content-Type': 'multipart/form-data' }
       })
       navigate(`/processing/${res.data.submissionId}`)
