@@ -11,7 +11,7 @@ function Report() {
   useEffect(() => {
     const fetchReport = async () => {
       try {
-        const res = await axios.get(`sprezox-production.up.railway.app/api/report/${submissionId}`)
+        const res = await axios.get(`https://sprezox-production.up.railway.app/api/report/${submissionId}`)
         setReport(res.data.report)
         setLoading(false)
       } catch (err) {
@@ -51,7 +51,7 @@ function Report() {
           <p style={styles.summary}>{report.executiveSummary}</p>
           <button
             style={styles.downloadBtn}
-            onClick={() => window.open(`sprezox-production.up.railway.app/api/report/${submissionId}/pdf`, '_blank')}
+            onClick={() => window.open(`https://sprezox-production.up.railway.app/api/report/${submissionId}/pdf`, '_blank')}
           >
             ↓ Download PDF Report
           </button>
