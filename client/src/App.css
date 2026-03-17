@@ -1,0 +1,4 @@
+/* Clean reset for App level */
+#root {
+  min-height: 100vh;
+}
