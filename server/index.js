@@ -6,9 +6,11 @@ const { router } = require('./routes')
 const app = express()
 
 app.use(cors({
-  origin: 'https://sprezox.vercel.app',
-  methods: ['GET', 'POST'],
+  origin: '*',
+  methods: ['GET', 'POST', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
 }))
+app.options('*', cors())
 app.use(express.json())
 
 app.use('/api', router)
